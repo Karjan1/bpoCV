@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+<body>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12  col-md-10 main">
+
+            <h2 class="sub-header">Pracownicy</h2>
+            <div class="container">
+                <div class="row">
+                    <form class="form-horizontal" th:href="@{/edytujPracownika}" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend>Zmień dane pracownika</legend>
+                            <div class="form-group" style="display: none;">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="idPracownika"  th:value="${pracownik.idPracownika}"
+                                           required="required" name="idPracownika"/></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 control-label">
+                                    <label for="imie">Imię</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="imie" placeholder="Imię" th:value="${pracownik.imie}"
+                                           required="required" name="imie"/></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 control-label">
+                                    <label for="nazwisko">Nazwisko</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="nazwisko" placeholder="Nazwisko" th:value="${pracownik.nazwisko}"
+                                           required="required" name="nazwisko"/></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 control-label">
+                                    <label for="stanowisko">Stanowisko</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="stanowisko" placeholder="Stanowisko" th:value="${pracownik.stanowisko}"
+                                           required="required" name="stanowisko"/></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 control-label">
+                                    <label for="pensja">Pensja</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" id="pensja" placeholder="Pensja" th:value="${pracownik.pensja}"
+                                           required="required" name="pensja"/></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 control-label">
+                                    <label for="dataZatrudnienia">Data zatrudnienia</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control" id="dataZatrudnienia" placeholder="Data zatrudnienia" th:value="${pracownik.dataZatrudnienia}"
+                                           required="required" name="dataZatrudnienia"/></div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class=" col-md-offset-2">
+                                    <button type="submit" class="btn btn-success">Zapisz</button>
+                                    <a th:href="@{/}" class="btn btn-danger">Anuluj</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+</html>
